@@ -8,10 +8,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
-public class itemInFavorites {
 
+public class itemInCartTest {
 
     public static void main(String[] args) {
 
@@ -23,6 +22,7 @@ public class itemInFavorites {
         WebDriver driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.get("https://www.lamoda.ru/women-home/");
+
 
 //        //кнопка вход
 //        WebElement webElement0 = driver.findElement(By.xpath("//a[@class='_root_clp6c_2 _secondaryLabel_clp6c_13 _link_1gjtp_11 _link_1gjtp_11']"));
@@ -42,8 +42,6 @@ public class itemInFavorites {
 //        WebElement webElement04 = driver.findElement(By.xpath("//button[@class='x-button x-button_primaryFilledWeb7184 x-button_40 x-button_intrinsic-width _submit_3z173_25']"));
 //        webElement04.click();
 
-
-
         //кнопка меню Женщинам
         WebElement webElement1 = driver.findElement(By.xpath("//a[@href='/c/4153/default-women/?is_new=1&sitelink=topmenuW&l=2']"));
         webElement1.click();
@@ -52,9 +50,22 @@ public class itemInFavorites {
         WebElement webElement2 = driver.findElement(By.xpath("//a[@href='/c/4153/default-women/?is_new=1&sitelink=topmenuW&l=2']"));
         webElement2.click();
 
-        //кнопка Сердечко
-        WebElement webElement3 = driver.findElement(By.xpath("//div[@class='x-product-card__overlay-top-right'][1]"));
+        //выбор карточки
+        WebElement webElement3 = driver.findElement(By.xpath("//div[@class='_area_552z7_8'][1]"));
         webElement3.click();
+
+        //кнопка Добавить в корзину
+        WebElement webElement4 = driver.findElement(By.xpath("//button[@class='x-button x-button_primaryPremium x-button_48 _cartButton_lky3q_11']"));
+        webElement4.click();
+
+        //выбор размера
+        WebElement webElement5 = driver.findElement(By.xpath("//div[@class=\"recaptcha\"]/div[1]"));
+        webElement5.click();
+
+
+//      //Кнопка Перейти в корзину
+        WebElement webElement6 = driver.findElement(By.xpath("//a[@class='x-button x-button_primaryFilledWeb7184 x-button_32 x-button_link x-button_link_32 x-button_intrinsic-width']"));
+        webElement6.click();
 
         //Завершаем работу с ресурсом
         driver.quit();
